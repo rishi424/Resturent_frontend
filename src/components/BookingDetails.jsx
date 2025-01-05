@@ -13,7 +13,7 @@ const BookingDetails = () => {
     useEffect(() => {
         const fetchBooking = async () => {
             try {
-                const response = await axios.get(`${import.meta.env.VITE_BACKEND_LINK}/api/bookings/${id}`);
+                const response = await axios.get(`${import.meta.env.VITE_BACKEND_LINK}/bookings/${id}`);
                 if (response.data.success) {
                     setBooking(response.data.data); // Use `data` field from the response
                 } else {
@@ -37,7 +37,7 @@ const BookingDetails = () => {
 
     const handleDelete = async () => {
         try {
-            const response = await axios.delete(`${import.meta.env.VITE_BACKEND_LINK}/api/bookings/${id}`);
+            const response = await axios.delete(`${import.meta.env.VITE_BACKEND_LINK}/bookings/${id}`);
             if (response.data.success) {
                 toast.success("Booking deleted successfully!"); // Success toast
                 navigate("/"); // Redirect to the home page after deletion

@@ -18,7 +18,7 @@ const BookingForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post(`${import.meta.env.VITE_BACKEND_LINK}/api/bookings`, formData);
+            const response = await axios.post(`${import.meta.env.VITE_BACKEND_LINK}/bookings`, formData);
 
             if (response.data.success) {
                 toast.success("Booking created successfully!"); // Success toast

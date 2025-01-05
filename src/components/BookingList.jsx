@@ -11,7 +11,7 @@ const BookingList = () => {
     useEffect(() => {
         const fetchBookings = async () => {
             try {
-                const response = await axios.get(`${import.meta.env.VITE_BACKEND_LINK}/api/bookings`);
+                const response = await axios.get(`${import.meta.env.VITE_BACKEND_LINK}/bookings`);
 
                 if (response.data.success) {
                     setBookings(response.data.data); // Use `data` field from the response
@@ -37,7 +37,7 @@ const BookingList = () => {
 
     const handleDelete = async (id) => {
         try {
-            const response = await axios.delete(`${import.meta.env.VITE_BACKEND_LINK}/api/bookings/${id}`);
+            const response = await axios.delete(`${import.meta.env.VITE_BACKEND_LINK}/bookings/${id}`);
 
             if (response.data.success) {
                 setBookings(bookings.filter((booking) => booking._id !== id)); // Remove the deleted booking from the list

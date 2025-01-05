@@ -20,7 +20,7 @@ const EditBooking = () => {
     useEffect(() => {
         const fetchBooking = async () => {
             try {
-                const response = await axios.get(`${import.meta.env.VITE_BACKEND_LINK}/api/bookings/${id}`);
+                const response = await axios.get(`${import.meta.env.VITE_BACKEND_LINK}/bookings/${id}`);
 
                 if (response.data.success) {
                     setFormData(response.data.data); // Use `data` field from the response
@@ -47,7 +47,7 @@ const EditBooking = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.patch(`${import.meta.env.VITE_BACKEND_LINK}/api/bookings/${id}`, formData);
+            const response = await axios.patch(`${import.meta.env.VITE_BACKEND_LINK}/bookings/${id}`, formData);
 
             if (response.data.success) {
                 toast.success("Booking updated successfully!"); // Success toast
